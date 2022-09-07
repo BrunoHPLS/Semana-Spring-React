@@ -1,5 +1,7 @@
 package com.devsuperior.dsmeta.services;
 
+import java.time.LocalDate;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -14,7 +16,8 @@ public class SaleService {
     @Autowired
     private SaleRepository repository;
 
-    public Page<Sale> pageAll(Integer page,Integer size){
-        return repository.findAll(PageRequest.of(page, size));
+    public Page<Sale> pageAll(LocalDate minDate,LocalDate maxDate,Integer page,Integer size){
+        System.out.println(minDate + " " + maxDate);
+        return repository.findSales(minDate,maxDate,PageRequest.of(page, size));
     }
 }
