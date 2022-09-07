@@ -17,7 +17,6 @@ public class SaleService {
     private SaleRepository repository;
 
     public Page<Sale> pageAll(LocalDate minDate,LocalDate maxDate,Integer page,Integer size){
-        System.out.println(minDate + " " + maxDate);
         return repository.findSales(minDate,maxDate,PageRequest.of(page, size));
     }
 }
