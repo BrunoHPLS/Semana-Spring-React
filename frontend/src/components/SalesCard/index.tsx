@@ -20,7 +20,7 @@ const SalesCard = () => {
           `${BASE_URL}/sales`, 
           {
             params: {
-              size: 5,
+              size: 10,
               minDate: minDate.toISOString().slice(0,10),
               maxDate: maxDate.toISOString().slice(0,10)
             }
